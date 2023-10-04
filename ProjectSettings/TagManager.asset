@@ -8,10 +8,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - EntangledObject
   - Water
   - UI
-  - 
+  - QuantumBox
   - 
   - 
   - 

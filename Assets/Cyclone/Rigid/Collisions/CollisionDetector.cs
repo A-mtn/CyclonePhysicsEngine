@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using Cyclone.Core;
+using UnityEngine;
 
 namespace Cyclone.Rigid.Collisions
 {
@@ -154,7 +155,6 @@ namespace Cyclone.Rigid.Collisions
             // Make sure we have contacts
             if (data.NoMoreContacts()) return;
             //if (!IntersectionTests.BoxAndBox(one, two)) return;
-
             // Find the vector between the two centres
             Vector3d toCentre = two.GetAxis(3) - one.GetAxis(3);
 
@@ -195,6 +195,7 @@ namespace Cyclone.Rigid.Collisions
             // of the axes gave the smallest penetration. We now
             // can deal with it in different ways depending on
             // the case.
+                
             if (best < 3)
             {
                 // We've got a vertex of box two on a face of box one.

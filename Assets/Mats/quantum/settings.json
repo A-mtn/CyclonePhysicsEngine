@@ -1,0 +1,22 @@
+{
+  "prompt_text": "quantum world universe mystery",
+  "patch": {
+    "ext": "png",
+    "dtype": "uint8",
+    "width": 512,
+    "height": 512,
+    "url": "https://static.withpoly.com/v3-voronoi/textures/patches/c31e0e11-e47f-4ee3-a119-aba9d071d029.png",
+    "patch_id": "B3ycEGw7rt"
+  },
+  "seamless_prompt_text": "quantum world universe mystery",
+  "seamless_patch_scale": 0.8,
+  "upscale_prompt_text": "quantum world universe mystery",
+  "upscale_resolution": 1024,
+  "is_seamless": true,
+  "pbr_mode": "general",
+  "pbr_generate_color": true,
+  "pbr_generate_normal": true,
+  "pbr_generate_height": true,
+  "pbr_generate_ao": true,
+  "pbr_generate_roughness": true
+}

@@ -1,0 +1,22 @@
+{
+  "prompt_text": "quantum world universe mystery one color not distractive",
+  "patch": {
+    "ext": "png",
+    "dtype": "uint8",
+    "width": 512,
+    "height": 512,
+    "url": "https://static.withpoly.com/v3-voronoi/textures/patches/843afa51-2e3d-4ca3-b78b-f72cfabbc8ff.png",
+    "patch_id": "M9ALze3Crm"
+  },
+  "seamless_prompt_text": "quantum world universe mystery one color not distractive",
+  "seamless_patch_scale": 0.8,
+  "upscale_prompt_text": "quantum world universe mystery one color not distractive",
+  "upscale_resolution": 1024,
+  "is_seamless": true,
+  "pbr_mode": "general",
+  "pbr_generate_color": true,
+  "pbr_generate_normal": true,
+  "pbr_generate_height": true,
+  "pbr_generate_ao": true,
+  "pbr_generate_roughness": true
+}

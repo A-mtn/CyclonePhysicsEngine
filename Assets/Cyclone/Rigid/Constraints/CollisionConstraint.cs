@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using Cyclone.Core;
 using Cyclone.Rigid.Collisions;
+using UnityEngine;
 
 namespace Cyclone.Rigid.Constraints
 {
@@ -81,7 +82,7 @@ namespace Cyclone.Rigid.Constraints
             {
                 if (primative == sphere) continue;
                 if (data.NoMoreContacts()) break;
-
+                
                 switch (primative)
                 {
                     case CollisionSphere sphere2:
@@ -100,6 +101,12 @@ namespace Cyclone.Rigid.Constraints
             foreach (var plane in Planes)
                 CollisionDetector.BoxAndHalfSpace(box, plane, data);
 
+           /* if (box.Body.GetIsWall())
+            {
+                Debug.Log("Wallll! ");
+                return;
+            }*/
+            
             foreach (var primative in Primatives)
             {
                 if (primative == box) continue;
@@ -112,8 +119,10 @@ namespace Cyclone.Rigid.Constraints
                         break;
 
                     case CollisionBox box2:
+                    {
                         CollisionDetector.BoxAndBox(box, box2, data);
                         break;
+                    }
                 }
             }
         }

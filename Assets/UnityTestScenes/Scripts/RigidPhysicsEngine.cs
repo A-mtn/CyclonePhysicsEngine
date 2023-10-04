@@ -26,9 +26,9 @@ namespace CycloneUnityTestScenes
             Instance.Resolver.PositionEpsilon = epsilon;
             Instance.Resolver.VelocityEpsilon = epsilon;
             Instance.Collisions.Restitution = 0;
-            Instance.Collisions.Friction = 0.1;
+            Instance.Collisions.Friction = .1;
 
-            Instance.ForceAreas.Add(new RigidGravityForce(-9.81));
+           // Instance.ForceAreas.Add(new RigidGravityForce(-9.81));
         }
 
         private void FixedUpdate()

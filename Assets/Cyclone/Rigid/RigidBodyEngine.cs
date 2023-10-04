@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Cyclone.Core;
 using Cyclone.Rigid.Constraints;
 using Cyclone.Rigid.Forces;
+using Unity.VisualScripting;
 
 namespace Cyclone.Rigid
 {
@@ -97,7 +98,7 @@ namespace Cyclone.Rigid
         {
             // First apply the force.s
             ApplyForces(dt);
-
+            
             Integrate(dt);
 
             // Generate contacts
@@ -117,6 +118,7 @@ namespace Cyclone.Rigid
             foreach (var f in ForceAreas)
             {
                 foreach (var b in Bodies)
+                    
                     f.UpdateForce(b, dt);
             }
 

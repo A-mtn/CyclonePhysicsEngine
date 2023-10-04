@@ -22,7 +22,7 @@ namespace CycloneUnityTestScenes
             Instance = new ParticleEngine(maxContacts);
             Instance.Resolver.Iterations = iterations;
 
-            Instance.ForceAreas.Add(new ParticleGravityForce(-9.81));
+            //Instance.ForceAreas.Add(new ParticleGravityForce(-9.81));
 
             //Instance.Constraints.Add(new PlaneConstraint(-2));
         }

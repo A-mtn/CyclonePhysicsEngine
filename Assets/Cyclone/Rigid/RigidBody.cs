@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 
 using Cyclone.Core;
+using UnityEngine;
+using Quaternion = Cyclone.Core.Quaternion;
 
 namespace Cyclone.Rigid
 {
@@ -132,6 +134,9 @@ namespace Cyclone.Rigid
         ///</summary>
         private bool m_canSleep;
 
+        private bool m_isWall = false;
+        public string Name;
+
         ///<summary>
         /// Holds a transform matrix for converting body space into
         /// world space and vice versa. This can be achieved by calling
@@ -213,10 +218,21 @@ namespace Cyclone.Rigid
         {
             if (!m_isAwake) return;
 
+            /*Debug.Log(Name + " is wall " + m_isWall);
+            if (m_isWall)
+            {
+                Debug.Log("this is wall " + Name);
+                m_forceAccum = Vector3d.Zero;
+                m_torqueAccum = Vector3d.Zero;
+                Velocity = Vector3d.Zero;
+                Rotation = Vector3d.Zero;
+                return;
+            }*/
+
             // Calculate linear acceleration from force inputs.
             LastFrameAcceleration = m_acceleration;
             LastFrameAcceleration += m_forceAccum * InverseMass;
-
+            
             // Calculate angular acceleration from torque inputs.
             Vector3d angularAcceleration = InverseInertiaTensorWorld * m_torqueAccum;
 
@@ -230,7 +246,6 @@ namespace Cyclone.Rigid
             // Impose drag.
             Velocity *= Math.Pow(LinearDamping, dt);
             Rotation *= Math.Pow(AngularDamping, dt);
-
             // Adjust positions
             // Update linear position.
             Position += Velocity * dt;
@@ -259,6 +274,7 @@ namespace Cyclone.Rigid
                 else if (m_motion > 10 * SleepEpsilon)
                     m_motion = 10 * SleepEpsilon;
             }
+            
         }
 
         ///<summary>
@@ -438,6 +454,16 @@ namespace Cyclone.Rigid
             m_canSleep = canSleep;
             if (!m_canSleep && !m_isAwake) SetAwake();
         }
+        
+        public void SetIsWall(bool isWall)
+        {
+            m_isWall = isWall;
+        }
+        
+        public bool GetIsWall()
+        {
+            return m_isWall;
+        }
 
         ///<summary>
         /// @name Retrieval Functions for Dynamic Quantities
@@ -458,6 +484,7 @@ namespace Cyclone.Rigid
         public void ClearAccumulators()
         {
             m_forceAccum = Vector3d.Zero;
+            Debug.Log("force removed" + m_forceAccum);
             m_torqueAccum = Vector3d.Zero;
         }
 
@@ -470,6 +497,7 @@ namespace Cyclone.Rigid
         public void AddForce(Vector3d force)
         {
             m_forceAccum += force;
+            Debug.Log("force added" + m_forceAccum);
             m_isAwake = true;
         }
 
@@ -523,6 +551,7 @@ namespace Cyclone.Rigid
         public void AddTorque(Vector3d torque)
         {
             m_torqueAccum += torque;
+            Debug.Log("torq " + m_torqueAccum);
             m_isAwake = true;
         }
 

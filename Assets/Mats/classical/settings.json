@@ -1,0 +1,22 @@
+{
+  "prompt_text": "quantum mystery one color purple",
+  "patch": {
+    "ext": "png",
+    "dtype": "uint8",
+    "width": 512,
+    "height": 512,
+    "url": "https://static.withpoly.com/v3-voronoi/textures/patches/f9660495-58d7-4c62-817a-fbad703ac5fe.png",
+    "patch_id": "P7DmKhAMVA"
+  },
+  "seamless_prompt_text": "quantum mystery one color purple",
+  "seamless_patch_scale": 0.8,
+  "upscale_prompt_text": "quantum mystery one color purple",
+  "upscale_resolution": 1024,
+  "is_seamless": true,
+  "pbr_mode": "shiny",
+  "pbr_generate_color": true,
+  "pbr_generate_normal": true,
+  "pbr_generate_height": true,
+  "pbr_generate_ao": true,
+  "pbr_generate_roughness": true
+}
